@@ -11,8 +11,8 @@ node_modules/
 __pycache__/
 
 # Environment variables
-.env
-
+*.env
+env
 # Docker
 *.log
 docker-compose.override.yml
