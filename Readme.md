@@ -30,8 +30,9 @@ graph LR
     B -->|Static Files| A
     C -->|Data| E[Database]
     D -->|Data| E
+    D -->|Message Queue| F[Message Queue]
+    C -->|Message Queue| F
 ```
-
 - **`docker-compose.yml`**: Orchestrates service definitions and interactions. 🔄
 - **`Dockerfile`**: Defines the build instructions for the FastAPI service container. 📦
 - **`ui_service/`**: Contains all files related to the React UI. 🎨
