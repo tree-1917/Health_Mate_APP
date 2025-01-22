@@ -1,0 +1,44 @@
+# version: '3.8'
+
+services:
+  nginx_service:
+    image: my-nginx-app:latest  # Use the prebuilt my-nginx-app image
+    container_name: nginx_service
+    ports:
+      - "8080:8080"  # Map port 8080 of the host to the container
+    depends_on:
+      - node_service_1
+      - node_service_2
+      - fast_service_1
+      - fast_service_2
+    networks:
+      - health_network
+
+  node_service_1:
+    image: my-block-app:latest
+    container_name: node_service_1
+    networks:
+      - health_network
+
+  node_service_2:
+    image: my-crud-app:latest
+    container_name: node_service_2
+    networks:
+      - health_network
+
+  fast_service_1:
+    image: my-fastapi-app:latest
+    container_name: fast_service_1
+    networks:
+      - health_network
+
+  fast_service_2:
+    image: my-ml-app:latest
+    container_name: fast_service_2
+    networks:
+      - health_network
+
+networks:
+  health_network:
+    driver: bridge
+

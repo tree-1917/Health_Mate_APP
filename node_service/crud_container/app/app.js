@@ -6,6 +6,12 @@ app.get('/version', (req, res) => {
   res.json({ version: 'curdv0.0' });
 });
 
+// In your Node.js app (e.g., app.js or server.js)
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
+
+
 // Start the server
 const PORT = 3002;
 app.listen(PORT, () => {
