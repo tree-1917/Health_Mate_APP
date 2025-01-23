@@ -1,19 +1,18 @@
 const express = require('express');
 const app = express();
 
-// Simple endpoint to return the version
-app.get('/version', (req, res) => {
-  res.json({ version: 'blockv0.0' });
+// Define a route for '/'
+app.get('/', (req, res) => {
+    res.send('Hello from Node.js!');
 });
 
-// In your Node.js app (e.g., app.js or server.js)
-app.get('/health', (req, res) => {
-    res.status(200).send('OK');
+// Example: Define another API route
+app.get('/api', (req, res) => {
+    res.send({ message: 'API response from Node.js!' });
 });
 
-// Start the server
-const PORT = 3001;
+const PORT = 3001; // or 3002
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });
 
