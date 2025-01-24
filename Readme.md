@@ -114,7 +114,7 @@ Contributions to **Health Root** are welcome! Please follow the standard GitLab 
 
 ## License 📜
 
-This project is licensed under [LICENSE NAME]. See the `LICENSE` file for details.
+This project is licensed under GPL LICENSE .
 
 --- 
 
